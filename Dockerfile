@@ -20,6 +20,7 @@ RUN composer install --no-dev --optimize-autoloader
 COPY . /var/www/html
 
 # Fix permissions (optional but recommended)
+RUN composer install --no-dev --optimize-autoloader --no-interaction --allow-root
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 RUN composer install
 
