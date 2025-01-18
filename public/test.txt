@@ -1,0 +1,49 @@
+*   Trying 2606:4700:8391:d424:1f39:4:6ae4:7e4e:443...
+* Connected to api-preprod.phonepe.com (2606:4700:8391:d424:1f39:4:6ae4:7e4e) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: E:\xampp\apache\bin\curl-ca-bundle.crt
+  CApath: none
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: CN=*.phonepe.com
+*  start date: Jul  8 17:37:49 2024 GMT
+*  expire date: Jul  8 17:37:49 2025 GMT
+*  subjectAltName: host "api-preprod.phonepe.com" matched cert's "*.phonepe.com"
+*  issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2
+*  SSL certificate verify ok.
+* Using HTTP2, server supports multi-use
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* Using Stream ID: 1 (easy handle 0x1a2f3b3a850)
+> POST /apis/pg-sandbox/pg/v1/pay HTTP/2
+Host: api-preprod.phonepe.com
+accept: */*
+content-type:application/json
+x-verify:54b6102ff33db287e08cc4624144740fd24d47d9136dc2c8a485485f27286068###1
+content-length: 482
+
+* We are completely uploaded and fine
+* old SSL session ID is stale, removing
+* Connection state changed (MAX_CONCURRENT_STREAMS == 100)!
+< HTTP/2 401 
+< date: Mon, 23 Dec 2024 10:00:42 GMT
+< content-type: application/json
+< x-requested-method: POST
+< access-control-allow-origin: *
+< access-control-allow-headers: Cache-Control,If-Modified-Since,Pragma,Content-Type,Authorization,X-Requested-With,Content-Length,Accept,Origin, X-VERIFY, X-MERCHANT-ID, X-CALLBACK-URL, checkouttype, x-app-package-name, x-request-env, x-auth-token, x-browser-fingerprint, x-client, x-client-major-version, x-client-name, x-client-subtype, x-client-type, x-client-version, x-device-type, x-encrypted, x-merchant-domain, x-source, x-source-channel, x-source-channel-version, x-source-integration-mode
+< access-control-allow-methods: OPTIONS,GET,PUT,POST,DELETE,HEAD
+< x-response-backend-time: 1734948042341
+< x-request-backend-time: 1734948042313
+< x-api-exception-code: R018
+< x-frame-options: DENY
+< x-content-type-options: nosniff
+< x-xss-protection: 1; mode=block
+< strict-transport-security: max-age=0; includeSubDomains; preload
+< cf-cache-status: DYNAMIC
+< server: cloudflare
+< cf-ray: 8f67818e9f93a6c5-DEL
+< 
+* Connection #0 to host api-preprod.phonepe.com left intact
