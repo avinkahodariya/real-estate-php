@@ -1,0 +1,10 @@
+services:
+  - name: real-estate-php
+    type: web
+    env: docker
+    repo: https://github.com/avinkahodariya/real-estate-php
+    plan: free
+    region: oregon
+    branch: main
+    healthCheckPath: /
+    autoDeploy: true
