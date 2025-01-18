@@ -20,7 +20,14 @@ RUN composer install --no-dev --optimize-autoloader
 COPY . /var/www/html
 
 # Fix permissions (optional but recommended)
-RUN composer install --no-dev --optimize-autoloader --no-interaction --allow-root
+# Fix permissions and switch to www-data
+RUN chown -R www-data:www-data /var/www/html
+USER www-data
+
+# Install Composer dependencies
+RUN composer install --no-dev --optimize-autoloader
+
+USER root
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 
 # Expose port 80
